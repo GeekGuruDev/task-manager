@@ -2,8 +2,16 @@ import { useEffect, useState } from "react";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 
+const getStorageTasks = () => {
+  let tasks = localStorage.getItem("tasks");
+  if (tasks) {
+    return JSON.parse(tasks);
+  }
+  return [];
+};
+
 const Main = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(getStorageTasks());
   const [alert, setAlert] = useState({ msg: "", type: "" });
 
   const addHandler = (taskName) => {
@@ -36,6 +44,10 @@ const Main = () => {
       type: "alert-green",
     });
   };
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
