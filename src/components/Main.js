@@ -37,6 +37,16 @@ const Main = () => {
     setAlert({ msg: "Task Deleted Successfully", type: "alert-green" });
   };
 
+  const completeHandler = (taskId) => {
+    const newTasks = tasks.map((task) => {
+      if (task.id === taskId) {
+        task.completed = !task.completed;
+      }
+      return task;
+    });
+    setTasks(newTasks);
+  };
+
   const clearHandler = () => {
     setTasks([]);
     setAlert({
@@ -61,7 +71,12 @@ const Main = () => {
   return (
     <main className="main">
       <TaskForm onAdd={addHandler} alert={alert} />
-      <TaskList tasks={tasks} onDelete={deleteHandler} onClear={clearHandler} />
+      <TaskList
+        tasks={tasks}
+        onDelete={deleteHandler}
+        onClear={clearHandler}
+        onComplete={completeHandler}
+      />
     </main>
   );
 };

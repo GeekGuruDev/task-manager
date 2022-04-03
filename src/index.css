@@ -192,17 +192,47 @@ body {
 .task-item {
   display: flex;
   justify-content: space-between;
-
   padding: 1.2rem;
   border: 1px solid var(--gray-400);
   border-radius: var(--radius);
 }
+
 .task-item:hover {
   box-shadow: var(--shadow);
-  color: var(--primary-500);
+}
+
+.task-item h3{
+  flex-grow: 1;
+  text-align: left;
+  padding-left: 1.5rem;
+}
+
+.completed{
+  text-decoration: line-through solid 0.15rem;
+
+}
+
+.check-btn{
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--gray-500);
+}
+
+.check-btn:hover{
+  color: #15803d;
+}
+
+.checked{
+  color:#16a34a
 }
 
 .task-btn {
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
   color: var(--gray-500);
   border: transparent;
@@ -211,20 +241,20 @@ body {
 }
 .task-btn:hover {
   background-color: transparent;
-  color: #991b1b;
+  color: #dc2626;
 }
 
 .btn-clear {
   background-color: transparent;
-  color: var(--primary-500);
-  border: 2px solid var(--primary-500);
+  color: #ef4444;
+  border: 2px solid #ef4444;
   width: 50%;
   margin: 1.5rem auto;
   display: block;
 }
 
 .btn-clear:hover {
-  background-color: var(--primary-500);
+  background-color: #ef4444;
 }
 
 .footer {
