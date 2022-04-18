@@ -147,7 +147,7 @@ body {
   border-radius: var(--radius);
   border: 2px solid var(--primary-300);
   background-color: var(--gray-200);
-  line-height: 1.5;
+  line-height: 2;
   width: 75%;
 }
 
